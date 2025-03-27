@@ -1,0 +1,13 @@
+# pip install fastapi uvicorn openai requests python-dotenv
+# pip install fastapi uvicorn streamlit openai python-dotenv azure-ai-textanalytics azure-cognitiveservices-speech
+fastapi
+uvicorn
+streamlit
+openai
+python-dotenv
+azure-ai-textanalytics
+azure-cognitiveservices-speech
+db-sqlite3
+# pip install -r requirements.txt
+# pip install db-sqlite3
+
