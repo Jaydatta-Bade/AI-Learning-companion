@@ -3,9 +3,9 @@ import requests
 import time
 
 # API Endpoints
-CHAT_API_URL = "http://127.0.0.1:8000/ask"
-RECOMMEND_API_URL = "http://127.0.0.1:8000/recommend"
-QUIZ_API_URL = "http://127.0.0.1:8000/quiz"
+CHAT_API_URL = "https://<your-backend-app-name>.azurewebsites.net/ask"
+RECOMMEND_API_URL = "https://<your-backend-app-name>.azurewebsites.net/recommend"
+QUIZ_API_URL = "https://<your-backend-app-name>.azurewebsites.net/quiz"
 
 st.title("🎓 AI Learning Companion")
 
