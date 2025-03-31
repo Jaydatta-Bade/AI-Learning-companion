@@ -1,11 +1,13 @@
 import streamlit as st
 import requests
 import time
+import os
 
 # API Endpoints
-CHAT_API_URL = "https://<your-backend-app-name>.azurewebsites.net/ask"
-RECOMMEND_API_URL = "https://<your-backend-app-name>.azurewebsites.net/recommend"
-QUIZ_API_URL = "https://<your-backend-app-name>.azurewebsites.net/quiz"
+BACKEND_URL = os.getenv("BACKEND_URL", "https://ai-learning-companion-backend-bgbgdpb9fwe8d3hq.canadacentral-01.azurewebsites.net")  # Default to Azure backend
+CHAT_API_URL = f"{BACKEND_URL}/ask"
+RECOMMEND_API_URL = f"{BACKEND_URL}/recommend"
+QUIZ_API_URL = f"{BACKEND_URL}/quiz"
 
 st.title("🎓 AI Learning Companion")
 

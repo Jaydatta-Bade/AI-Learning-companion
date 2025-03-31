@@ -1,0 +1,36 @@
+name: Deploy Frontend
+
+on:
+  push:
+    branches:
+      - main  # Trigger deployment on pushes to the main branch
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+    # Step 1: Checkout the repository
+    - name: Checkout code
+      uses: actions/checkout@v3
+
+    # Step 2: Set up Python
+    - name: Set up Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: "3.11"
+
+    # Step 3: Install dependencies
+    - name: Install dependencies
+      run: |
+        cd frontend
+        pip install -r requirements.txt
+
+    # Step 4: Deploy to Azure App Service
+    - name: Deploy to Azure App Service
+      uses: azure/webapps-deploy@v2
+      with:
+        app-name: ${{ secrets.AZURE_FRONTEND_APP_NAME }}
+        slot-name: production
+        publish-profile: ${{ secrets.AZURE_CREDENTIALS }}
+        package: ./frontend
